@@ -1,4 +1,52 @@
-<div class="container text-center">
+
+<div class="container mt-5">
+  <div class="form-group">
+    <label>Choisissez le format d'affichage:</label>
+    <i class="fa fa-th-large ml-3" style="cursor:pointer" (click)="changeFormat('cards')"></i>
+    <i class="fa fa-table ml-3" style="cursor:pointer" (click)="changeFormat('table')"></i>
+  </div>
+  @if (format === 'cards') {
+    <div class="row">
+      @for ( lutteur of lutteurs; track lutteur.id) {
+          <div class="col-md-4 my-3">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title">{{lutteur?.nom}}</h5>
+                      <p class="card-text">Poids: {{lutteur?.poids}}</p>
+                      <p class="card-text">Taille: {{lutteur?.taille}}</p>
+                      <p class="card-text">Pays: {{lutteur?.pays}}</p>
+                  </div>
+              </div>
+          </div>
+      }
+  </div>
+  }
+  @else if (format === 'table') {
+    <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>Nom</th>
+              <th>Poids</th>
+              <th>Taille</th>
+              <th>Pays</th>
+          </tr>
+      </thead>
+      <tbody>
+          @for ( lutteur of lutteurs; track lutteur.id) {
+              <tr>
+                  <td>{{lutteur?.nom}}</td>
+                  <td>{{lutteur?.poids}}</td>
+                  <td>{{lutteur?.taille}}</td>
+                  <td>{{lutteur?.pays}}</td>
+              </tr>
+          }
+      </tbody>
+  </table>
+  }
+
+</div>
+
+<!-- <div class="container text-center">
     <h4>Liste des lutteurs</h4>
     <table class="table table-striped">
         <thead>
@@ -16,11 +64,10 @@
                     <td>{{lutteur?.poids}}</td>
                     <td>{{lutteur?.taille}}</td>
                     <td>{{lutteur?.pays}}</td>
-                    <!-- <td> Editer Supprimer </td> -->
                 </tr>
             }
 
         <tbody>
     </table>
-</div>
+</div> -->
 

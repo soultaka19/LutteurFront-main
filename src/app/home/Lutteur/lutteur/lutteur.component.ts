@@ -14,7 +14,7 @@ export class LutteurComponent implements OnInit {
 
   lutteurs :any = [] ;
 
-
+  format = 'cards';
 
   ngOnInit(): void {
     this.getAllLutteurs();
@@ -29,6 +29,8 @@ export class LutteurComponent implements OnInit {
       console.log("Lutteurs:", response["lutteurs"]); // Vérifiez la console du navigateur pour voir les données récupérées
     });
   }
-
+  changeFormat(value: string) {
+    this.format = value;
+  }
 
 }
