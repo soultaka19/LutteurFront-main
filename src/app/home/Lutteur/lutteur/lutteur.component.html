@@ -1,0 +1,26 @@
+<div class="container text-center">
+    <h4>Liste des lutteurs</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th>Nom</th>
+            <th>Poids</th>
+            <th>Taille</th>
+            <th>Pays</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for ( lutteur of lutteurs; track lutteur.id) {
+                <tr>
+                    <td>{{lutteur?.nom}}</td>
+                    <td>{{lutteur?.poids}}</td>
+                    <td>{{lutteur?.taille}}</td>
+                    <td>{{lutteur?.pays}}</td>
+                    <!-- <td> Editer Supprimer </td> -->
+                </tr>
+            }
+
+        <tbody>
+    </table>
+</div>
+

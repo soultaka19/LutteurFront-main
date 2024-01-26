@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>Ajouter un lutteur</h2>
+    <form (ngSubmit)="onSubmit()" #lutteurForm="ngForm">
+      <div class="form-group">
+        <label for="nom">Nom :</label>
+        <input 
+        required
+        pattern="^[a-zA-Z0-9àéèç]{1,25}$"
+        type="text" class="form-control" id="nom" name="nom" [(ngModel)]="lutteur.nom" required>
+      </div>
+      <div class="form-group">
+        <label for="pays">Pays :</label>
+        <input
+        required
+        pattern="^[a-zA-Z0-9àéèç]{1,25}$"
+         type="text" class="form-control" id="pays" name="pays" [(ngModel)]="lutteur.pays" required>
+      </div>
+      <div class="form-group">
+        <label for="taille">Taille :</label>
+        <input 
+        required
+        pattern="^[0-9]{1,3}$"
+        type="number" class="form-control" id="taille" name="taille" [(ngModel)]="lutteur.taille" required>
+      </div>
+      <div class="form-group">
+        <label for="poids">Poids :</label>
+        <input 
+        required
+        pattern="^[0-9]{1,3}$"
+        type="number" class="form-control" id="poids" name="poids" [(ngModel)]="lutteur.poids" required>
+      </div>
+      <button type="submit"   class="btn btn-primary">Ajouter</button>
+    </form>
+</div>
+  
